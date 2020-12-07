@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bmiCalculator" class="com.koreait.ex05_xml_property.BMICalculator" >
+		<property name="lowWeight"  value="18.5"/> 
+			<property name="normal"  value="23"/> 
+			<property name="overWeight"  value="25"/> 
+			<property name="obesity"  value="30"/> 
+	</bean>
+	
+	<bean id="myInfo" class="com.koreait.ex05_xml_property.MyInfo">
+		<property name="name"  value="김혜지"/> 
+		<property name="height"  value="162.0"/>   
+		<property name="weight"  value="48.0"/>   
+		<property name="hobby" >
+				<list>
+					<value>	음악듣기</value>
+					<value>	게임하기</value>
+					<value>	영화보기</value>
+				</list>
+		</property> 
+		<property name="bmiCalculator" > <!-- MainClass에서 가져다 쓴다. -->
+			<ref bean="bmiCalculator"/>		<!--6번라인에 만들어 놓은것  -->
+		</property> 
+	</bean>
+</beans>

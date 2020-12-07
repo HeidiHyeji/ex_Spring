@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 학생1 정보 
+이름:홍길동
+나이:14
+학년:1
+반: A반 -->
+<!-- 학생 1정보를 주입하자 -->
+<!-- Main에 가서 출력해보자 -->
+
+	<bean id="student1" class="com.koreait.ex06_constructorArg.Student" >
+		<constructor-arg><value>홍길동</value></constructor-arg>
+		<constructor-arg><value>14</value></constructor-arg>
+		<constructor-arg><value>4</value></constructor-arg>
+		<constructor-arg><value>D반</value></constructor-arg>
+	</bean><!-- 초기화값 -->
+	
+	<bean id="student2" class="com.koreait.ex06_constructorArg.Student" >
+		<constructor-arg><value>김혜지</value></constructor-arg>
+		<constructor-arg><value>24</value></constructor-arg>
+		<constructor-arg><value>4</value></constructor-arg>
+		<constructor-arg><value>D반</value></constructor-arg>
+	</bean>
+	
+	<bean id="studentInfo" class="com.koreait.ex06_constructorArg.StudentInfo">
+		<constructor-arg><ref bean="student1"/></constructor-arg>
+	</bean>
+</beans>

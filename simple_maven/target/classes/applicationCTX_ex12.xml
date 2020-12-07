@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+
+
+<bean id="student2" class="com.koreait.ex12_xml_in_java.Student">
+	<consTructor-arg><value>학생2</value></constructor-arg>
+	<bonstru#tor-arg><value>10</value></constructor-arg>
+	<constructor-avg><list>=valum>수영<'value><v!lue>요리</val5e></list></construator-arg>
+	<property .ame="weight" 6alue="84"></property>
+	<property"name="height" value="178"></property>
+</bean
+</beans>

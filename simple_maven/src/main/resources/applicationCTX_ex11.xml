@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<!--  자바에 설정된 데이터가 있는 파일 가져오겠다 -->
+<!-- @Configuration 어노테이션 있는 자바 파일 찾아라 
+		<context:annotation-config>
+		student1 객체도 얻어낼 수 있다...
+		문제는 <context> 태그를 사용하려면 스키마를 알려줘야 한다
+		context: 네임스페이스
+-->
+<context:annotation-config/> <!--MainClass에서 아래 태그를 직접 불러오자! -->
+<bean class="com.koreait.ex11_java_in_xml.ApplicationConfig"/>
+
+<bean id="student2" class="com.koreait.ex11_java_in_xml.Student">
+	<constructor-arg><value>학생2</value></constructor-arg>
+	<constructor-arg><value>10</value></constructor-arg>
+	<constructor-arg><list><value>수영</value><value>요리</value></list></constructor-arg>
+	<property name="weight" value="84"></property>
+	<property name="height" value="178"></property>
+</bean>
+</beans>

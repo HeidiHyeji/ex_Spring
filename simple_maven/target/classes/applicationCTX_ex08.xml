@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="calculator" class="com.koreait.ex08_interface_calculator.Calculator"/>
+	<bean id="calculatorAccount" class="com.koreait.ex08_interface_calculator.CalculatorAccount"/>
+	<bean id="calculatorMecanic" class="com.koreait.ex08_interface_calculator.CalculatorMecanic"/>
+	<bean id="calculatorProgramming" class="com.koreait.ex08_interface_calculator.CalculatorProgramming"/>
+	
+	
+	<bean id="myCalculator" class="com.koreait.ex08_interface_calculator.MyCalculator">
+		<property name="firstNum" value="10"></property>
+		<property name="secondNum" value="2"></property>
+		<property name="calculator">
+				<ref bean="calculatorProgramming"/>
+		</property>
+	</bean>
+</beans>

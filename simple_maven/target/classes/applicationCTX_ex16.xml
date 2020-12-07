@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<!--  태그 형식으로 properties의 location을 알려준다.
+여러개 있으면 ","로 나열하면 된다. 
+	properties 파일을 xml로 읽어 들일 예정!!!-->
+<context:property-placeholder location="classpath:admin.properties, classpath:admin_sub.properties"/>
+
+<!--  이 컨테이너에서는 xml의 설정대로... admin과 admin_sub 프로퍼티의 내용을 참조하고 있다. -->
+<!--  컨테이너가 갖고 있는 properties의 내용(id값, pw값)을 읽어 들여야 할 경우,
+		<value></value> 사이에 el 식으로 표현해야 한다.
+		${} {}안에 변수를 쓴다. (사실을 setter이다. setter를 쓰지 않으면 el을 사용할 수 없다)
+		변수를 쓸때 공백이 있으면 안된다.
+		${param.id }=> 공백이 있어서 에러!=> ${param.id} value태그 안에 넣자  -->
+		
+		<bean id="adminConnection" class="com.koreait.ex16_properties_xml.AdminConnection">
+			<property name="adminId"><value>${admin.id}</value></property>
+			<property name="adminPw"><value>${admin.pw}</value></property>
+			<!--  실제 가져올 내용을 써야한다. 그 내용(데이터)의 변수는 프로퍼티 파일에 있다. -->
+			<property name="admin_subId"><value>${admin_sub.id}</value></property>
+			<property name="admin_subPw"><value>${admin_sub.pw}</value></property>
+		</bean>
+		
+</beans>
