@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>글목록보기</h2>
+	<table border="1">
+		<tr>
+			<th>글번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>작성일</th>
+			<th>조회수</th>
+		</tr>
+		<tr th:each="board, status: ${xxx}">
+			<td th:text="${board.num}"></td>
+			<td><a
+				th:href="@{retrieve(num=${board.num})}" th:text="${board.title}"></a></td>
+			<td th:text="${board.author}"></td>
+			<td th:text="${board.write_day}"></td>
+			<td th:text="${board.readcnt}"></td>
+		</tr>
+	</table>
+	<a href="writeForm">글쓰기</a>
+</html>

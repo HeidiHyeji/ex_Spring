@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>main2.html</h2>
+아이디:<div th:text="${login.userid}"></div>
+비번:<span th:text="${login.passwd}"></span>
+
+<h2>main2.html</h2>
+<div th:object="${login}">
+	아이디:<div th:text="*{userid}"></div>
+	비번:<span th:text="*{passwd}"></span>
+</div>
+</body>
+</html>

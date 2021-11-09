@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>main3.html</h2>
+<p>1. 조건이 참이면 show</p>
+<div th:if="${user.age == 20}">
+	true인 경우에만 보임
+</div>
+<p>2. 조건이 거짓이면 show</p>
+<div th:unless="${user.age == 20}">
+	false인 경우에만 보임
+</div>
+<p>3. switch</p>
+<div th:switch="${user.username}">
+	<p th:case="'이순신'">이순신이다</p>
+	<p th:case="'홍길동'">홍길동이다</p>
+	<p th:case="*">None</p>
+</div>
+</body>
+</html>
