@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sample.repository.BoardRepository">
+	<select id="selectBoardByNum" parameterType="int"
+		resultType="com.example.sample.dto.BoardDTO">
+		select num, title, author, content, write_day, readcnt
+		from
+		board
+		where num = #{num}
+	</select>
+	<select id="selectAllBoard"
+		resultType="com.example.sample.dto.BoardDTO">
+		select num, title, author, content, write_day, readcnt
+		from
+		board
+	</select>
+	<insert parameterType="com.example.sample.dto.BoardDTO"
+		id="insertBoard">insert into board ( num, title, author, content )values
+		(nextval('board_seq'), #{title},#{author},#{content})
+	</insert>
+	<delete id="deleteBoard"
+		parameterType="com.example.sample.dto.BoardDTO">
+		delete from board where num=#{num}
+	</delete>
+</mapper>
+

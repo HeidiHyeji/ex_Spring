@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var username = [[${zzz}]];
+	alert(username);
+</script>
+</head>
+<body>
+	<h2>main5.html</h2>
+	<a href="hello">hello</a><br>
+	<a th:href="@{hello}">hello</a><br>
+	<a href="hello6?name=${zzz}&age=30">hello6</a><br>
+	<a th:href="@{hello6(name=${zzz},age=30)}">hello6</a>
+</body>
+</html>
